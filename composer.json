@@ -23,7 +23,8 @@
   },
   "require": {
     "php": "^7.3",
-    "norse-blue/scalar-objects": "dev-master"
+    "norse-blue/scalar-objects": "dev-master",
+    "symfony/finder": "^4.3"
   },
   "require-dev": {
     "nunomaduro/phpinsights": "^1.6",
