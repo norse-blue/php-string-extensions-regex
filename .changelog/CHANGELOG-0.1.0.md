@@ -10,5 +10,4 @@ First release.
 - Added the `regexReplace` extension method for `StringType`.
 
 ---
-
 Previous: [Release 0.0.0](CHANGELOG-0.0.0.md)
