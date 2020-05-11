@@ -22,8 +22,6 @@ final class StringRegexMatchesExtension extends StringType implements ExtensionM
          * @param string|StringType $pattern
          * @param int|IntType $flags
          *
-         * @return array
-         *
          * @throws \NorseBlue\StringExtensions\Regex\Exceptions\RegexMatchException
          *
          * @see https://www.php.net/manual/en/function.preg-match.php

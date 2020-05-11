@@ -12,28 +12,10 @@ use Throwable;
  */
 final class RegexMatchException extends RuntimeException
 {
-    // region === Properties ===
+    protected int $preg_error_code;
 
-    /** @var int $preg_error_code */
-    protected $preg_error_code;
+    protected string $preg_error_name;
 
-    /** @var string $preg_error_name */
-    protected $preg_error_name;
-
-    // endregion Properties
-
-    // region === Constructor ===
-
-    /**
-     * RegexMatchException constructor.
-     *
-     * @param int $preg_error_code
-     * @param string $message
-     * @param int $code
-     * @param \Throwable|null $previous
-     *
-     * @see https://www.php.net/manual/en/function.preg-last-error.php
-     */
     public function __construct(
         int $preg_error_code,
         string $message = '',
@@ -46,14 +28,8 @@ final class RegexMatchException extends RuntimeException
         $this->preg_error_name = $this->translatePregErrorCode($this->preg_error_code);
     }
 
-    // endregion Constructor
-
-    // region === Property Accessors ===
-
     /**
      * Get the PCRE regex execution error code.
-     *
-     * @return int
      */
     public function getPregErrorCode(): int
     {
@@ -62,24 +38,14 @@ final class RegexMatchException extends RuntimeException
 
     /**
      * Get the PCRE regex execution error name.
-     *
-     * @return string
      */
     public function getPregErrorName(): string
     {
         return $this->preg_error_name;
     }
 
-    // endregion Property Accessors
-
-    // region === Methods ===
-
     /**
      * Translate the PCRE execution regex error code.
-     *
-     * @param int $preg_error_code
-     *
-     * @return string
      */
     protected function translatePregErrorCode(int $preg_error_code): string
     {
@@ -87,6 +53,4 @@ final class RegexMatchException extends RuntimeException
 
         return @array_flip($pcre_constants)[$preg_error_code];
     }
-
-    // endregion Methods
 }

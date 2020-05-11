@@ -13,20 +13,19 @@ use function NorseBlue\ScalarObjects\Functions\string;
 final class StringRegexReplaceExtension extends StringType implements ExtensionMethod
 {
     /**
-     * @return callable(string|StringType|array<string|StringType> $pattern, string|StringType|array<string|StringType> $replacement, int|IntType $limit = -1): StringType
+     * @return callable(string|StringType|array<string|StringType> $pattern, string|StringType|array<string|StringType>
+     *     $replacement, int|IntType $limit = -1): StringType
      */
     public function __invoke(): callable
     {
         /**
          * Perform a regular expression search and replace.
          *
-         * @see https://www.php.net/manual/en/function.preg-replace.php
-         *
-         * @param string|StringType|array $pattern
-         * @param string|StringType|array $replacement
+         * @param string|StringType|array<string|StringType> $pattern
+         * @param string|StringType|array<string|StringType> $replacement
          * @param int|IntType $limit
          *
-         * @return \NorseBlue\ScalarObjects\Types\StringType
+         * @see https://www.php.net/manual/en/function.preg-replace.php
          */
         return function ($pattern, $replacement, $limit = -1): StringType {
             $pattern = self::unwrap($pattern);

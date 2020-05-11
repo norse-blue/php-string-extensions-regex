@@ -13,19 +13,19 @@ use function NorseBlue\ScalarObjects\Functions\string;
 final class StringRegexPatternMatchExtension extends StringType implements ExtensionMethod
 {
     /**
-     * @return callable(string|StringType|array $patterns): BoolType
+     * @return callable(string|StringType|array<string|StringType> $patterns): BoolType
      */
     public function __invoke(): callable
     {
         /**
          * Determine if a given string matches at least one of the given patterns.
          *
-         * @param string|StringType|array $patterns
+         * @param string|StringType|array<string|StringType> $patterns
          *
          * @return BoolType
          */
         return function ($patterns): BoolType {
-            if (!is_array($patterns)) {
+            if (! is_array($patterns)) {
                 $patterns = [$patterns];
             }
 

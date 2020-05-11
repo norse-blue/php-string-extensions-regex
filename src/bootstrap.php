@@ -17,7 +17,7 @@ use function NorseBlue\ScalarObjects\path_merge;
         iterator_to_array(
             Finder::create()
                 ->in($extensions_path)
-                ->name("String*Extension.php")
+                ->name('String*Extension.php')
                 ->files()
         )
     );

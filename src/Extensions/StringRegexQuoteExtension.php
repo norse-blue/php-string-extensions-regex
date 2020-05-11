@@ -20,13 +20,11 @@ final class StringRegexQuoteExtension extends StringType implements ExtensionMet
          *
          * @param string|StringType|null $delimiter
          *
-         * @return \NorseBlue\ScalarObjects\Types\StringType
-         *
          * @see https://www.php.net/manual/en/function.preg-quote.php
          */
         return function ($delimiter = null): StringType {
             if ($delimiter !== null) {
-                return string(preg_quote($this->value, (string)self::unwrap($delimiter)));
+                return string(preg_quote($this->value, (string) self::unwrap($delimiter)));
             }
 
             return string(preg_quote($this->value));
