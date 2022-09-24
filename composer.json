@@ -22,8 +22,8 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": "^7.4",
-    "norse-blue/scalar-objects": "^0.2",
+    "php": "^8.0",
+    "norse-blue/scalar-objects": "^0.3",
     "symfony/finder": "^5.0"
   },
   "require-dev": {
